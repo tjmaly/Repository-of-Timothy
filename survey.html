@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Customer Survey</title>
+
+<style>
+
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-white);
+  margin: 0;
+}
+
+ /* mobile friendly alternative to using background-attachment: fixed */
+   body::before {
+     content: '';
+     position: fixed;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     z-index: -1;
+     background: var(--color-darkblue);
+     background-image: linear-gradient(
+         115deg,
+         rgba(58, 58, 158, 0.8),
+         rgba(136, 136, 206, 0.7)
+       )
+   }  
+
+   label {
+       display: flex;
+       align-items: center;
+       font-size: 1.125rem;
+       margin-bottom: 0.5rem;
+   }
+ 
+    .input-radio,
+    .input-checkbox {
+        display: inline-block;
+        margin-right: 0.625rem;
+        min-height: 1.25rem;
+        min-width: 1.25rem;
+   }
+   
+   .input-textarea {
+        min-height: 120px;
+        width: 100%;
+        padding: 0.625rem;
+        resize: vertical;
+   }
+
+   .container {
+        width: 100%;
+        margin: 3.125rem auto 0 auto;
+   }
+   
+   .header {
+   
+   }
+   h1 {
+      font-weight: 400;
+      line-height: 1.2;
+   }
+   
+   h1,
+   p {
+     margin-top: 0;
+     margin-bottom: 0.5rem;
+   }
+   
+   form {
+     background: var(--color-darkblue-alpha);
+     padding: 2.5rem 0.625rem;
+     border-radius: 0.25rem;
+   }
+   
+   
+   body {
+     font-family: sans-serif;
+     font-size: 1rem;
+     font-weight: 400;
+     line-height: 1.4;
+     color: var(--color-white);
+     margin: 0;
+   }
+   .form-control {
+     display: block;
+     width: 100%;
+     height: 2.375rem;
+	 padding: 0.375rem 0.75rem;
+     color: #495057;
+     background-color: #fff;
+     background-clip: padding-box;
+     border: 1px solid #ced4da;
+     border-radius: 0.25rem;
+     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+   }
+   
+   p {
+   font-size: 1.125rem
+   }
+  .submit-button {
+     display: block;
+     width: 100%;
+     padding: 0.75rem;
+     background: var(--color-green);
+     color: inherit;
+     border-radius: 2px;
+     cursor: pointer;
+}
+</style>
+</head>
+<body translate="no">
+<div class="container">
+<header class="header">
+<div style="text-align: center;">
+<h1 id="title" class="text-center">Tim's Fantastic Products - Survey</h1>
+</div>
+
+<p id="description">
+Thank you for helping make our product experience GREAT!!!
+</p>
+</header>
+<form id="survey-form">
+<div class="form-group">
+<label id="name-label" for="name">Name</label>
+<input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required />
+</div>
+<div class="form-group">
+<label id="email-label" for="email">Email</label>
+<input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required />
+</div>
+<div class="form-group">
+<label id="number-label" for="number">Age<span class="clue">(optional)</span></label
+      >
+<input type="number" name="age" id="number" min="18" max="99" class="form-control" placeholder="Age" />
+</div>
+<div class="form-group">
+<p>Which option best describes you?</p>
+<select id="dropdown" name="you" class="form-control" required>
+<option disabled selected value>Select best description</option>
+<option value="meat-head">meat-head</option>
+<option value="nerd">nerd</option>
+<option value="yuppy">yuppy</option>
+<option value="preferNo">Prefer not to say</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="form-group">
+<p>Would you recommend Tim's Fantastic Products to a friend?</p>
+<label>
+<input name="user-recommend" value="definitely" type="radio" class="input-radio" checked />Definitely</label
+      >
+<label>
+<input name="user-recommend" value="maybe" type="radio" class="input-radio" />Maybe</label
+      >
+<label><input name="user-recommend" value="not-sure" type="radio" class="input-radio" />Not sure</label
+      >
+</div>
+<div class="form-group">
+<p>
+What is your favorite product?
+</p>
+<select id="most-like" name="mostLike" class="form-control" required>
+<option disabled selected value>Select an option</option>
+<option value="inTiminator hair shaver">inTiminator shaver</option>
+<option value="Tim's original shave cream">Tim's original shave cream</option>
+<option value="Tim's musk scented soap">Tim's musk scented soap</option>
+<option value="other">other</option>
+</select>
+</div>
+<div class="form-group">
+<p>
+What other products would you like to buy from Tim's?
+<span class="clue">(Check all that apply)</span>
+</p>
+<label><input name="prefer" value="supplements" type="checkbox" class="input-checkbox" />supplements</label
+      >
+<label>
+<input name="prefer" value="underwear" type="checkbox" class="input-checkbox" />underwear</label
+      >
+<label><input name="prefer" value="jammies" type="checkbox" class="input-checkbox" />jammies</label
+      >
+<label><input name="prefer" value="t-shirts" type="checkbox" class="input-checkbox" />t shirts</label
+      >
+<label><input name="prefer" value="essential-oils" type="checkbox" class="input-checkbox" />essential oils</label
+      >
+<label><input name="prefer" value="hair-products" type="checkbox" class="input-checkbox" />hair products</label
+      >
+<label><input name="prefer" value="skin-products" type="checkbox" class="input-checkbox" />skin products</label
+      >
+<label><input name="prefer" value="colognes-aftershaves" type="checkbox" class="input-checkbox" />colognes-aftershaves</label
+      >
+<label><input name="prefer" value="Tim's-workout-videos" type="checkbox" class="input-checkbox" />Tim's workout videos</label
+      >
+<label><input name="prefer" value="other-products" type="checkbox" class="input-checkbox" />other products</label
+      >
+
+<p>Any comments or suggestions?</p>
+<textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
+</div>
+<div class="form-group">
+<button type="submit" id="submit" class="submit-button">
+Submit
+</button>
+</div>
+</form>
+</div>
+</body>
+</html>
